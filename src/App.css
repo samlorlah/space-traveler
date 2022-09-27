@@ -1,3 +1,6 @@
+@import '~antd/dist/antd.css';
+@import '~antd/es/button/style/index.css';
+
 body {
   padding: 0;
   margin: 0;
@@ -27,8 +30,14 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  text-decoration: none;
   gap: 30px;
+  color: black;
   margin-right: 30px;
+}
+
+nav ul li {
+  color: black;
 }
 
 nav ul li:nth-child(2) {
