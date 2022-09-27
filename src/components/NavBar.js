@@ -1,5 +1,5 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '../images/planet.png';
 
 const NavBar = () => (
@@ -10,13 +10,13 @@ const NavBar = () => (
     </div>
     <ul>
       <li>
-        Rockets
+        <Link to="/">  Rockets  </Link>
       </li>
       <li>
-        Missions
+        <Link to="/missions">  Missions </Link>
       </li>
       <li>
-        My Profile
+        <Link to="/myprofile"> My Profile </Link>
       </li>
     </ul>
   </nav>
