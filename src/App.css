@@ -33,6 +33,11 @@ nav ul {
   margin-right: 30px;
 }
 
+.main ul li {
+  display: flex;
+  gap: 20px;
+}
+
 nav ul li:nth-child(2) {
   border-right: solid 1px #000;
   padding-right: 30px;
@@ -46,6 +51,7 @@ nav ul li a {
 .active {
   text-decoration: underline;
 }
+
 .main {
   padding: 20px;
 }
@@ -54,9 +60,4 @@ nav ul li a {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.main ul li {
-  display: flex;
-  gap: 20px;
 }
