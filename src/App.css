@@ -40,7 +40,7 @@ nav ul {
 
 nav ul li {
   color: black;
- }
+}
 
 nav ul li:nth-child(2) {
   border-right: solid 1px #000;
