@@ -5,7 +5,7 @@ import logo from '../images/planet.png';
 const NavBar = () => (
   <nav>
     <div className="logo">
-      <img src={logo} alt={logo} height="80" />
+      <img src={logo} alt={logo} />
       <h2 className="logo-title">Space Travelers&apos; Hub</h2>
     </div>
     <ul>
