@@ -2,7 +2,9 @@ import React from 'react';
 
 function Rockets() {
   return (
-    <div>Rockets</div>
+    <div className="main">
+      Rockets
+    </div>
   );
 }
 
