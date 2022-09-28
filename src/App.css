@@ -1,3 +1,6 @@
+@import '~antd/dist/antd.css';
+@import '~antd/es/button/style/index.css';
+
 body {
   padding: 0;
   margin: 0;
@@ -38,7 +41,9 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  text-decoration: none;
   gap: 30px;
+  color: black;
   margin-right: 30px;
   font-size: 0.85rem;
 }
@@ -48,11 +53,6 @@ nav ul {
   gap: 20px;
   font-size: 0.8rem;
   padding: 20px 0;
-}
-
-.rockets ul li h4 {
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 nav ul li:nth-child(2) {
