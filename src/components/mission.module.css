@@ -5,3 +5,25 @@
   justify-content: center;
   align-items: center;
 }
+
+.table {
+  width: 100%;
+}
+
+.head tr th {
+  border: 1px solid black;
+}
+
+.body tr td {
+  border: 1px solid black;
+}
+
+.desc {
+  width: 60%;
+}
+
+.button {
+  border: 0.1em solid rgb(0, 140, 255);
+  padding: 0.5em;
+  background-color: transparent;
+}
