@@ -1,8 +1,9 @@
 import React from 'react';
+import RocketsItems from '../components/RocketsItems';
 
 function Rockets() {
   return (
-    <div>Rockets</div>
+    <RocketsItems />
   );
 }
 

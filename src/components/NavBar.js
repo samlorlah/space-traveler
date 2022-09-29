@@ -1,22 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../images/planet.png';
 
 const NavBar = () => (
   <nav>
     <div className="logo">
-      <img src={logo} alt={logo} height="80" />
+      <img src={logo} alt={logo} />
       <h2 className="logo-title">Space Travelers&apos; Hub</h2>
     </div>
     <ul>
       <li>
-        <Link to="/">  Rockets  </Link>
+        <NavLink end className={({ isActive }) => (isActive ? 'active' : '')} to="/">  Rockets  </NavLink>
       </li>
       <li>
-        <Link to="/missions">  Missions </Link>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/missions">  Missions </NavLink>
       </li>
       <li>
-        <Link to="/myprofile"> My Profile </Link>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/myprofile"> My Profile </NavLink>
       </li>
     </ul>
   </nav>
