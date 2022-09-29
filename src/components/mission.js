@@ -45,7 +45,7 @@ function Mission() {
                 {!one.joined && <p className={styles.non}>NOT A MEMBER</p>}
                 {one.joined && <p className={styles.active}>ACTIVE MEMBER</p>}
               </td>
-              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" id={one.id} onClick={handleLeave}>Leave Mission</button>)}</td>
+              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" id={one.id} className={styles.btn} onClick={handleLeave}>Leave Mission</button>)}</td>
             </tr>
           )) : null}
         </tbody>
