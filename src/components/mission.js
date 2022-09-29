@@ -5,18 +5,24 @@ import styles from './mission.module.css';
 
 function Mission() {
   const dispatch = useDispatch();
-  const mission = useSelector((state) => state.missions.missions);
+  const { missions, loading } = useSelector((state) => state.missions);
 
   useEffect(() => {
-    if (mission.length === 0) {
+    if (loading === 'idle') {
+      console.log('called');
       dispatch(fetchMission());
     }
-  }, [dispatch, mission]);
+  }, []);
 
+  console.log(missions);
   const handleJoin = (e) => {
     const { id } = e.target;
     dispatch(actions.joinMission(id));
-    // console.log(dispatch(actions.joinMission(id)));
+  };
+
+  const handleLeave = (e) => {
+    const { id } = e.target;
+    dispatch(actions.leaveMission(id));
   };
 
   return (
@@ -31,7 +37,7 @@ function Mission() {
           </tr>
         </thead>
         <tbody className={styles.body}>
-          {mission.map((one) => (
+          {Array.isArray(missions) ? missions.map((one) => (
             <tr key={one.id}>
               <td>{one.name}</td>
               <td className={styles.desc}>{one.description}</td>
@@ -39,9 +45,9 @@ function Mission() {
                 {!one.joined && <p className={styles.non}>NOT A MEMBER</p>}
                 {one.joined && <p className={styles.active}>ACTIVE MEMBER</p>}
               </td>
-              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" onClick={handleJoin}>Leave Mission</button>)}</td>
+              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" id={one.id} onClick={handleLeave}>Leave Mission</button>)}</td>
             </tr>
-          ))}
+          )) : null}
         </tbody>
       </table>
     </div>
