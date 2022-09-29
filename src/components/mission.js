@@ -6,6 +6,7 @@ import styles from './mission.module.css';
 function Mission() {
   const dispatch = useDispatch();
   const { missions, loading } = useSelector((state) => state.missions);
+  // const loading = useSelector((state) => state.loading.loading);
 
   useEffect(() => {
     if (loading === 'idle') {
