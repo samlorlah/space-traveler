@@ -5,7 +5,7 @@ import RocketsItemList from './RocketsItemList';
 import Loading from './Loading';
 
 const RocketsItems = () => {
-  const state = useSelector((state) => state.rocketsReducer);
+  const state = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(() => {
     if (state.rockets.length === 0) {
