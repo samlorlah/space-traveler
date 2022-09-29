@@ -8,14 +8,15 @@ function Mission() {
   const mission = useSelector((state) => state.missions.missions);
 
   useEffect(() => {
-    dispatch(fetchMission());
+    if (mission.length === 0) {
+      dispatch(fetchMission());
+    }
   }, [dispatch, mission]);
 
   const handleJoin = (e) => {
     const { id } = e.target;
-    console.log(e.target.id);
-    actions.joinMission(id);
-    console.log(id);
+    dispatch(actions.joinMission(id));
+    // console.log(dispatch(actions.joinMission(id)));
   };
 
   return (
@@ -34,8 +35,11 @@ function Mission() {
             <tr key={one.id}>
               <td>{one.name}</td>
               <td className={styles.desc}>{one.description}</td>
-              <td>{!one.joined ? <p>Non-Member</p> : <p>Active-member</p> }</td>
-              <td>{!one.joined ? <button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button> : <button type="button" onClick={handleJoin}>Leave Mission</button>}</td>
+              <td>
+                {!one.joined && <p className={styles.non}>NOT A MEMBER</p>}
+                {one.joined && <p className={styles.active}>ACTIVE MEMBER</p>}
+              </td>
+              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" onClick={handleJoin}>Leave Mission</button>)}</td>
             </tr>
           ))}
         </tbody>

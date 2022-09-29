@@ -24,19 +24,12 @@ const missions = createSlice({
   initialState,
   reducers: {
     joinMission(state, action) {
-      const State = state.missions.map((data) => {
-        if (data.id === action.payload.id) {
-          return {
-            ...data,
-            joined: !data.joined,
-          };
-        }
-        return {
-          ...data,
-        };
-      });
-
-      return State;
+      // eslint-disable-next-line max-len
+      console.log(state.missions);
+      state.missions.find((mission) => (mission.id === action.payload.id
+        ? { ...mission, joined: true }
+        : mission));
+      console.log(state.missions);
     },
   },
   extraReducers: {
