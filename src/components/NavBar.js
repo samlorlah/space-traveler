@@ -10,13 +10,13 @@ const NavBar = () => (
     </div>
     <ul>
       <li>
-        <NavLink end activeClassName="active" to="/">  Rockets  </NavLink>
+        <NavLink end className={({ isActive }) => (isActive ? 'active' : '')} to="/">  Rockets  </NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to="/missions">  Missions </NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/missions">  Missions </NavLink>
       </li>
       <li>
-        <NavLink activeClassName="active" to="/myprofile"> My Profile </NavLink>
+        <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/myprofile"> My Profile </NavLink>
       </li>
     </ul>
   </nav>
