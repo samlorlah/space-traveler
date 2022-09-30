@@ -10,12 +10,10 @@ function Mission() {
 
   useEffect(() => {
     if (loading === 'idle') {
-      console.log('called');
       dispatch(fetchMission());
     }
   }, []);
 
-  console.log(missions);
   const handleJoin = (e) => {
     const { id } = e.target;
     dispatch(actions.joinMission(id));

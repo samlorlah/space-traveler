@@ -25,7 +25,6 @@ const missions = createSlice({
   initialState,
   reducers: {
     joinMission(state, action) {
-      console.log(action);
       // eslint-disable-next-line max-len
       state.missions = state.missions.map((obj) => {
         if (obj.id === action.payload) {
@@ -37,7 +36,6 @@ const missions = createSlice({
       return state;
     },
     leaveMission(state, action) {
-      console.log(action);
       // eslint-disable-next-line max-len
       state.missions = state.missions.map((obj) => {
         if (obj.id === action.payload) {
@@ -51,7 +49,6 @@ const missions = createSlice({
   },
   extraReducers: {
     [fetchMission.fulfilled]: (state, action) => {
-      console.log(action);
       state.missions = action.payload;
       state.loading = 'success';
     },
