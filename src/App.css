@@ -38,12 +38,8 @@ nav .logo h2 {
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  text-decoration: none;
   gap: 30px;
-  color: black;
   margin-right: 30px;
   font-size: 0.85rem;
 }
@@ -60,13 +56,12 @@ nav ul li:nth-child(2) {
   padding-right: 30px;
 }
 
-nav ul li a {
+nav ul li {
   text-decoration: none;
-  color: #00f;
 }
 
 .active {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .rockets {

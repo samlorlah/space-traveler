@@ -26,12 +26,17 @@ In the project directory, you can run:
 ### `npm install` and `npm start`
 once you have cloned the repo
 
-## Author
+## Authors
 
 👤 **Oluwamuyiwa Fawole**
 
 - GitHub: [@samlorlah](https://github.com/samlorlah)
 - LinkedIn: [Oluwamuyiwa Fawole](https://www.linkedin.com/in/muyiwa-fawole/)
+
+👤 **Alena Okolike**
+
+- GitHub: [@summyalena](https://github.com/summyalena)
+- Email: [summyalena@gmail.com](summyalena@gmail.com)
 
 ## 🤝 Contributing
 
