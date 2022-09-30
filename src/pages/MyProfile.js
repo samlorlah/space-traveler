@@ -23,11 +23,6 @@ function MyProfile() {
       <div>
         <MyProfileLists title="My Rockets" items={reservedRockets} />
       </div>
-      {/* <div>
-        {
-          toDisplay
-        }
-      </div> */}
     </div>
   );
 }
