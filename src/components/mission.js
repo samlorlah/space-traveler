@@ -1,81 +1,56 @@
-import React from 'react';
-import { Table, Button, Popconfirm } from 'antd';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMission, actions } from '../redux/mission/missions';
 import styles from './mission.module.css';
 
 function Mission() {
-  const handleAdd = () => {
-    console.log('hello');
+  const dispatch = useDispatch();
+  const { missions, loading } = useSelector((state) => state.missions);
+  // const loading = useSelector((state) => state.loading.loading);
+
+  useEffect(() => {
+    if (loading === 'idle') {
+      console.log('called');
+      dispatch(fetchMission());
+    }
+  }, []);
+
+  console.log(missions);
+  const handleJoin = (e) => {
+    const { id } = e.target;
+    dispatch(actions.joinMission(id));
   };
 
-  const handleDelete = () => {
-    console.log('delete');
+  const handleLeave = (e) => {
+    const { id } = e.target;
+    dispatch(actions.leaveMission(id));
   };
-  const dataSource = [
-    {
-      key: '1',
-      title: 'Mission',
-      description: 'This could be the time you would die and go away far far away',
-      status: '',
-    },
-    {
-      key: '2',
-      title: 'Mission',
-      description: 'This could be the time you would die and go away far far away',
-    },
-    {
-      key: '3',
-      title: 'Mission',
-      description: 'This could be the time you would die and go away far far away',
-      status: '',
-    },
-  ];
 
-  const columns = [
-    {
-      title: 'Mission',
-      dataIndex: 'title',
-      key: 'Mission',
-    },
-    {
-      title: 'Description',
-      dataIndex: 'description',
-      key: 'Description',
-    },
-    {
-      title: 'Status',
-      dataIndex: 'status',
-      key: 'status',
-    },
-    {
-      title: 'Actions',
-      dataIndex: 'actions',
-      key: 'actions',
-      render: (_, record) => (dataSource.length > 1 ? (
-        <Popconfirm title="sure to add" onConfirm={() => handleAdd(record)}>
-          <Button type="primary" ghost>
-            Join Mission
-          </Button>
-          {' '}
-        </Popconfirm>
-      ) : (
-        <Popconfirm title="sure to remove" onConfirm={() => handleDelete()}>
-          <Button type="danger" ghost>
-            Delete
-          </Button>
-        </Popconfirm>
-      ))
-
-      ,
-    },
-
-  ];
   return (
     <div className={styles.tableContainer}>
-      <Table
-        dataSource={dataSource}
-        columns={columns}
-        bordered
-      />
+      <table className={styles.table}>
+        <thead className={styles.head}>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody className={styles.body}>
+          {Array.isArray(missions) ? missions.map((one) => (
+            <tr key={one.id}>
+              <td>{one.name}</td>
+              <td className={styles.desc}>{one.description}</td>
+              <td>
+                {!one.joined && <p className={styles.non}>NOT A MEMBER</p>}
+                {one.joined && <p className={styles.active}>ACTIVE MEMBER</p>}
+              </td>
+              <td>{!one.joined ? (<button id={one.id} type="submit" className={styles.button} onClick={handleJoin}>Join Mission</button>) : (<button type="button" id={one.id} className={styles.btn} onClick={handleLeave}>Leave Mission</button>)}</td>
+            </tr>
+          )) : null}
+        </tbody>
+      </table>
     </div>
   );
 }
