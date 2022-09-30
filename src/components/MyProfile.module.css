@@ -1,0 +1,11 @@
+.profilesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profilesList li {
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
