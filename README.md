@@ -13,7 +13,7 @@ This project involves working with the real live data from the SpaceX API. The t
 
 ### Live Demo
 
-[Live Demo](https://space-traveler.vercel.app/)
+[Live Demo](https://space-traveler.vercel.app)
 
 ##### For validation detection using Webhint Run
 
